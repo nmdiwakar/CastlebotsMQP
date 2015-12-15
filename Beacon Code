@@ -1,0 +1,17 @@
+void setup() {
+  pinMode(9, OUTPUT);
+}
+
+void loop() {
+  
+  beep(1000);
+  
+}
+
+void beep(unsigned char delayms){
+ 
+  analogWrite(9, 200);
+  delay(delayms);
+  analogWrite(9,0);
+  delay(delayms);
+}
