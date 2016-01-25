@@ -1,0 +1,38 @@
+// Please see Google Doc for power information
+
+//Reads from all three breakout board outputs
+
+void setup() {
+ 
+  Serial.begin(9600);
+
+  int gatePin = 2;
+  int envelopePin = A0;
+  int audioPin = A4;
+ 
+  pinMode(gatePin, INPUT);           //gate (presence)
+  pinMode(envelopePin, INPUT);       //envelope (amplitude)
+  pinMode(audioPin, INPUT);          //audio (voltage)
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  int gatePin = 2;
+  int envelopePin = A0;
+  int audioPin = A4;
+  
+  int gateVal;
+  int envelopeVal;
+  int audioVal;
+
+  gateVal = digitalRead(gatePin);
+  envelopeVal = analogRead(envelopePin);
+  audioVal = analogRead(audioPin);
+
+  //Serial.println(gateVal);
+  //Serial.println(envelopeVal);
+  Serial.println(audioVal);
+ 
+}
