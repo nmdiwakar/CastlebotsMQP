@@ -1,0 +1,51 @@
+/**
+ * Created by dmmurray on 01/26/16.
+ * The motor class
+ */
+ 
+/**
+ * Makes a motor
+ * @constructor
+ * @param portnum, the motor's port number
+ * @param forwardPin, the number of the pin for forward motion
+ * @param backwardPin, the number of the pin for backward motion
+ * @param reversed, flag for reversal of one motor
+ * @param encoder, the encoder attached to this motor
+ */
+function Motor(portnum, forwardPin, backwardPin, reversed, encoder) {
+    this.portnum = portnum;
+    //this.speed = 0;
+    this.forwardPin = forwardPin;
+    this.backwardPin = backwardPin;
+    this.reversed = reversed;
+    this.encoder = encoder;
+}
+
+/**
+ * Stops the motor
+ */
+Motor.prototype.stop = function() {
+    this.speed = 0;
+};
+
+/**
+ * Drives the motor at the given speed in the given direction for the given
+ * distance
+ * @param speed, the motor's speed
+ * @param distance, the distance for the motor to drive
+ * @param direction, the direction for the motor to drive
+ */
+Motor.prototype.drive = function(speed, distance, direction) {
+    var time = 1000 * distance / speed;
+    if (direction == "forward") {
+        // set forward pin to speed
+    }
+    else if (direction == "backward") {
+        // set backward pin to speed
+    }
+    else {
+        console.log("direction must be forward or backward");
+        return;
+    }
+    setTimeout(this.stop(), time);
+};
