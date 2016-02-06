@@ -6,7 +6,7 @@
 var b = require('bonescript');
 var Motor = require('Motor');
 
-/*function main() {
+b.main=function(){
     Motor.initPins();
     var blueMotor = new Motor(1, Motor.motor1pin1, Motor.motor1pin2, 0);
     var yellowMotor = new Motor(1, Motor.motor2pin1, Motor.motor2pin2, 0);
@@ -19,19 +19,23 @@ var Motor = require('Motor');
     
     b.digitalWrite(blueMotor.forwardPin, b.LOW);
     b.digitalWrite(yellowMotor.forwardPin, b.LOW);
-}*/
+};
 
 function callback() {
     b.print("We did it! Yay! (Lo hicimos)");
 }
 
-//main();
+b.main();
 
-setup = function() {
+/*setup = function() {
     Motor.initPins();
-};
+};*/
 
-loop = function() {
+/*var loop = function() {
     b.print("running...");
-};
+};*/
+
+/*function loop() {
+    b.print("running...");
+}*/
  
